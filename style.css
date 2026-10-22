@@ -424,3 +424,16 @@ nav ul {
   width: 100%;
   aspect-ratio: 3 / 2;
 }
+/* Prague garden cards use the shared card colours and borders. */
+.garden-cards { grid-template-columns: minmax(0, 1fr); }
+.garden-card { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.garden-image, .garden-card > .image-fallback {
+  display: block; width: 100%; height: auto; aspect-ratio: 32 / 21; object-fit: cover;
+}
+.garden-copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1rem; }
+.garden-area { margin: 0 0 0.5rem; }
+.garden-map { margin-top: auto; font-weight: 700; }
+.garden-source { margin-top: 0.75rem; font-size: 0.75rem; }
+@media (min-width: 40rem) {
+  .garden-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

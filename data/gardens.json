@@ -1,0 +1,42 @@
+[
+    {
+        "source":  "https://prague.eu/en/objevujte/wallenstein-garden-valdstejnska-zahrada/",
+        "description":  "Explore geometric flower beds, bronze statues and a grand open-air pavilion in this Baroque palace garden.",
+        "localName":  "Valdštejnská zahrada",
+        "image":  "https://cdn.praguecitytourism.city/2024/03/13094759/valdstejnska-zahrada-scaled.jpg",
+        "name":  "Wallenstein Garden",
+        "map":  "https://www.google.com/maps/search/?api=1\u0026query=Vald%C5%A1tejnsk%C3%A1%20zahrada%2C%20Prague",
+        "area":  "Malá Strana",
+        "imageAlt":  "Wallenstein Garden in Prague"
+    },
+    {
+        "source":  "https://prague.eu/en/objevujte/vrtba-garden-vrtbovska-zahrada/",
+        "description":  "Discover Baroque terraces, ornamental planting and views over the rooftops of the Lesser Town.",
+        "localName":  "Vrtbovská zahrada",
+        "image":  "https://cdn.praguecitytourism.city/2024/11/25135702/vrtbovska-zahrada-1.jpg",
+        "name":  "Vrtba Garden",
+        "map":  "https://www.google.com/maps/search/?api=1\u0026query=Vrtbovsk%C3%A1%20zahrada%2C%20Prague",
+        "area":  "Malá Strana",
+        "imageAlt":  "Vrtba Garden in Prague"
+    },
+    {
+        "source":  "https://prague.eu/en/objevujte/prague-castle-gardens-zahrady-prazskeho-hradu/",
+        "description":  "Explore the green spaces around Prague Castle, from the Royal Garden to the southern gardens overlooking the city.",
+        "localName":  "Zahrady Pražského hradu",
+        "image":  "https://cdn.praguecitytourism.city/2024/03/13095025/img-20211203-wa0000.jpg",
+        "name":  "Prague Castle Gardens",
+        "map":  "https://www.google.com/maps/search/?api=1\u0026query=Zahrady%20Pra%C5%BEsk%C3%A9ho%20hradu%2C%20Prague",
+        "area":  "Hradčany",
+        "imageAlt":  "Prague Castle Gardens in Prague"
+    },
+    {
+        "source":  "https://prague.eu/en/objevujte/franciscan-garden-frantiskanska-zahrada/",
+        "description":  "Take a quiet break among rose-covered trellises and benches, tucked between the busy streets of central Prague.",
+        "localName":  "Františkánská zahrada",
+        "image":  "https://cdn.praguecitytourism.city/2024/03/13095618/frantiskanska-zahrada-m-1.jpg",
+        "name":  "Franciscan Garden",
+        "map":  "https://www.google.com/maps/search/?api=1\u0026query=Franti%C5%A1k%C3%A1nsk%C3%A1%20zahrada%2C%20Prague",
+        "area":  "Nové Město",
+        "imageAlt":  "Franciscan Garden in Prague"
+    }
+]

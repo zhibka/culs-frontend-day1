@@ -34,5 +34,26 @@
     <p>Made with HTML, CSS and JavaScript.
       <a href="https://developer.mozilla.org/">MDN</a> helped.</p>
   </footer>
+  <template id="visit-template">
+    <section id="visit" aria-labelledby="visit-heading">
+      <h2 id="visit-heading">Visit Prague's gardens</h2>
+      <p>Explore four of Prague's best-known gardens, from Baroque terraces to peaceful city hideaways.</p>
+      <p id="gardens-status" role="status">Loading gardens...</p>
+      <ul id="gardens-list" class="cards garden-cards"></ul>
+    </section>
+  </template>
+  <template id="garden-card-template">
+    <li class="card garden-card">
+      <img class="garden-image" width="640" height="420" loading="lazy">
+      <div class="garden-copy">
+        <p class="eyebrow garden-area"></p>
+        <h3 class="garden-name"></h3>
+        <p class="latin garden-local-name"></p>
+        <p class="garden-description"></p>
+        <a class="garden-map">View on Google Maps</a>
+        <a class="garden-source">Photo &amp; visitor information: Prague City Tourism</a>
+      </div>
+    </li>
+  </template>
 </body>
 </html>

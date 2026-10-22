@@ -1,5 +1,6 @@
 {
   "name": "Lavender",
+  "gardenNote": "Lavender shares our little garden with basil, mint, thyme and more.",
   "latin": "Lavandula angustifolia",
   "description": "Silver-green leaves, purple flower spikes and a familiar fragrance: English lavender brings colour and scent to a sunny garden.",
   "img": {
@@ -29,7 +30,7 @@
   ],
   "video": {
     "url": "https://www.youtube.com/watch?v=fj7h5E_E-5w",
-    "embedurl":"https://www.youtube.com/embed/fj7h5E_E-5w?si=q4mPVodPEM-xJLZH",
+    "embedurl":"https://www.youtube-nocookie.com/embed/fj7h5E_E-5w",
     "title": "YouTube video on the lavender page"
   }
 }

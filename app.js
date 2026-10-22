@@ -166,11 +166,7 @@ function showHerbMain(){
         <ul id="herbs-list" class="cards"></ul>
       </section>
 
-      <section id="visit">
-        <h2>Visit</h2>
-        <p>The garden is open every day from sunrise to sunset.
-          Bring a friend, rub a leaf between your fingers, and leave the bees alone.</p>
-      </section>
+      <div id="visit-slot"></div>
 
       <section id="about">
         <h2>About</h2>
@@ -179,6 +175,40 @@ function showHerbMain(){
           tips to find the right plants for your garden.</p>
       </section>
     `;
+}
+
+async function renderGardens() {
+  const slot = document.querySelector("#visit-slot");
+  if (!slot) return;
+  slot.replaceWith(document.querySelector("#visit-template").content.cloneNode(true));
+  const list = document.querySelector("#gardens-list");
+  const status = document.querySelector("#gardens-status");
+  try {
+    const response = await fetch("data/gardens.json");
+    if (!response.ok) throw new Error("Could not load gardens: " + response.status);
+    const gardens = await response.json();
+    if (!list.isConnected) return;
+    list.replaceChildren(...gardens.map((garden) => {
+      const card = document.querySelector("#garden-card-template").content.cloneNode(true);
+      const image = card.querySelector("img");
+      image.alt = garden.imageAlt;
+      image.src = garden.image;
+      card.querySelector(".garden-area").textContent = garden.area;
+      card.querySelector(".garden-name").textContent = garden.name;
+      card.querySelector(".garden-local-name").textContent = garden.localName;
+      card.querySelector(".garden-description").textContent = garden.description;
+      const map = card.querySelector(".garden-map");
+      map.href = garden.map;
+      map.setAttribute("aria-label", "Find " + garden.name + " on Google Maps");
+      card.querySelector(".garden-source").href = garden.source;
+      return card;
+    }));
+    status.textContent = gardens.length + " gardens to explore in Prague.";
+    status.classList.add("visually-hidden");
+  } catch (error) {
+    status.textContent = "The gardens could not be loaded. Please refresh the page to try again.";
+    console.error(error);
+  }
 }
 
 function fillList(element, items) {
@@ -254,7 +284,7 @@ function showHerbDetail(){
 
             <section aria-labelledby="garden-heading">
               <h2 id="garden-heading">Back to the garden</h2>
-                <p><a href="#herbs">Explore all herbs</a>.</p>
+                <p><span id="garden-note"></span><a href="#herbs">Explore all herbs</a>.</p>
             </section>
           </article>
     `;
@@ -294,6 +324,7 @@ const name = document.querySelector("#dherb-name");
   status.classList.add("visually-hidden");
   factsheading.textContent=`${data.name} at a glance`;
 
+  document.querySelector("#garden-note").textContent = data.gardenNote ? `${data.gardenNote} ` : "";
   name.textContent=data.name;
   latin.textContent=data.latin;
   description.textContent=data.description;
@@ -337,6 +368,7 @@ async function show() {
 //filled Main section
   if (!id || mainSections.includes(id)) {
     showHerbMain();
+    renderGardens();
 
     try {
       await renderHerbList();
@@ -349,7 +381,7 @@ async function show() {
       return;
     }
 
-    focusContent(id ? document.getElementById(id).querySelector("h2") : main.querySelector("h1"));
+    if (id) focusContent(document.getElementById(id)?.querySelector("h2"));
 
     return;
   }
